@@ -14,28 +14,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            let firstVc = ProductViewController()
-            let secondVc = CartViewController()
-            let thirdVc = HistoryViewController()
-
-            let firstNavCont = UINavigationController(rootViewController: firstVc)
-            let secondNavCont = UINavigationController(rootViewController: secondVc)
-            let thirdNavCont = UINavigationController(rootViewController: thirdVc)
-
+            let productVc = ProductViewController()
+            let cartVc = CartViewController()
+            let historyVc = HistoryViewController()
+            let productNavCont = setupTabBarItemNavigationController(rootViewController: productVc, title: "Product", imageName: "products", tag: 0)
+            let cartNavCont = setupTabBarItemNavigationController(rootViewController: cartVc, title: "Cart", imageName: "cart", tag: 1)
+            let historyNavCont = setupTabBarItemNavigationController(rootViewController: historyVc, title: "history", imageName: "history", tag: 2)
             let tabBarVc = UITabBarController()
-            tabBarVc.setViewControllers([firstNavCont, secondNavCont, thirdNavCont], animated: true)
-
-            firstVc.tabBarItem = UITabBarItem(title: "Product", image: UIImage(named: "products"), tag: 0)
-            secondVc.tabBarItem = UITabBarItem(title: "Cart", image: UIImage(named: "cart"), tag: 1)
-            thirdVc.tabBarItem = UITabBarItem(title: "History", image: UIImage(named: "history"), tag: 2)
-
+            tabBarVc.setViewControllers([productNavCont, cartNavCont, historyNavCont], animated: true)
             window.rootViewController = tabBarVc
             window.backgroundColor = .white
-            secondVc.loadViewIfNeeded()
             self.window = window
             self.window?.makeKeyAndVisible()
         }
     }
+    private func setupTabBarItemNavigationController(rootViewController: UIViewController, title: String, imageName: String, tag: Int) -> UINavigationController {
+        let navController = UINavigationController(rootViewController: rootViewController)
+        navController.tabBarItem = UITabBarItem(title: title, image: UIImage(named: imageName), tag: tag)
+        return navController
+    }
+
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
