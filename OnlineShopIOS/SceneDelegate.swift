@@ -12,10 +12,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        if let windowScene = scene as? UIWindowScene {
+            let window = UIWindow(windowScene: windowScene)
+            let firstVc = ProductViewController()
+            let secondVc = CartViewController()
+            let thirdVc = HistoryViewController()
+
+            let firstNavCont = UINavigationController(rootViewController: firstVc)
+            let secondNavCont = UINavigationController(rootViewController: secondVc)
+            let thirdNavCont = UINavigationController(rootViewController: thirdVc)
+
+            let tabBarVc = UITabBarController()
+            tabBarVc.setViewControllers([firstNavCont, secondNavCont, thirdNavCont], animated: true)
+
+            firstVc.tabBarItem = UITabBarItem(title: "Product", image: UIImage(named: "products"), tag: 0)
+            secondVc.tabBarItem = UITabBarItem(title: "Cart", image: UIImage(named: "cart"), tag: 1)
+            thirdVc.tabBarItem = UITabBarItem(title: "History", image: UIImage(named: "history"), tag: 2)
+
+            window.rootViewController = tabBarVc
+            window.backgroundColor = .white
+            secondVc.loadViewIfNeeded()
+            self.window = window
+            self.window?.makeKeyAndVisible()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
