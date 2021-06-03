@@ -12,28 +12,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        if let windowScene = scene as? UIWindowScene {
-            let window = UIWindow(windowScene: windowScene)
-            let productVc = ProductViewController()
-            let cartVc = CartViewController()
-            let historyVc = HistoryViewController()
-            let productNavCont = setupTabBarItemNavigationController(rootViewController: productVc, title: "Product", imageName: "products", tag: 0)
-            let cartNavCont = setupTabBarItemNavigationController(rootViewController: cartVc, title: "Cart", imageName: "cart", tag: 1)
-            let historyNavCont = setupTabBarItemNavigationController(rootViewController: historyVc, title: "history", imageName: "history", tag: 2)
-            let tabBarVc = UITabBarController()
-            tabBarVc.setViewControllers([productNavCont, cartNavCont, historyNavCont], animated: true)
-            window.rootViewController = tabBarVc
-            window.backgroundColor = .white
-            self.window = window
-            self.window?.makeKeyAndVisible()
-        }
+        guard let windowScene = (scene as? UIWindowScene) else {return}
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let home = TabBarViewController()
+        self.window?.rootViewController = home
+        window?.makeKeyAndVisible()
+        window?.windowScene = windowScene
     }
-    private func setupTabBarItemNavigationController(rootViewController: UIViewController, title: String, imageName: String, tag: Int) -> UINavigationController {
-        let navController = UINavigationController(rootViewController: rootViewController)
-        navController.tabBarItem = UITabBarItem(title: title, image: UIImage(named: imageName), tag: tag)
-        return navController
-    }
-
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
