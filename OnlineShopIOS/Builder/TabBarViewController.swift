@@ -17,7 +17,7 @@ class TabBarViewController: UITabBarController {
         setupVc()
     }
 
-    func setupVc() {
+    private func setupVc() {
         viewControllers = [createNavController(for: ProductViewController(), title: NSLocalizedString("Products", comment: ""), imageName: "products"),
         createNavController(for: CartViewController(), title: NSLocalizedString("Cart", comment: ""), imageName: "cart"),
         createNavController(for: HistoryViewController(), title: NSLocalizedString("History", comment: ""), imageName: "history")]

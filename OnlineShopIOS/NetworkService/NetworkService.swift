@@ -13,8 +13,9 @@ protocol NetworkServiceProtocol {
 
 class NetworkService: NetworkServiceProtocol {
     func getProducts(completion: @escaping (Result<[Product]?, Error>) -> Void) {
-        let urlString = "http://localhost:5000/api/Products"
-        guard let url = URL(string: urlString) else { return }
+        let baseUrlString = "http://localhost:5000/api"
+        let productPathUrlString = "/Products"
+        guard let url = URL(string: baseUrlString + productPathUrlString) else { return }
         URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 completion(.failure(error))

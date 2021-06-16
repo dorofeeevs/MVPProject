@@ -8,7 +8,7 @@
 import UIKit
 
 class ProductViewController: UIViewController {
-    var presenter: ProductViewPresenterProtocol?
+    var presenter: ProductViewPresenter?
     lazy var productCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         collectionView.backgroundColor = .white
@@ -61,12 +61,12 @@ extension ProductViewController {
     }
 }
 
-extension ProductViewController: ProductViewProtocol {
-    func success() {
+extension ProductViewController: ProductView {
+    func successfulRequest() {
         productCollectionView.reloadData()
     }
 
-    func failure(error: Error) {
+    func failureRequest(error: Error) {
         print(error.localizedDescription)
     }
 }
