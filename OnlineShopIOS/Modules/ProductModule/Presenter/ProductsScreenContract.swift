@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol ProductView: AnyObject {
-    func successfulRequest()
-    func failureRequest(error: Error)
+protocol ProductListView: AnyObject {
+    func reloadProductListItems()
+    func showError(error: Error)
 }
 
 protocol ProductViewPresenter: AnyObject {
     var products: [Product]? {get}
-    init(view: ProductView, networkService: NetworkServiceProtocol)
+    init(view: ProductListView, networkService: NetworkServiceProtocol)
     func getProducts()
 }

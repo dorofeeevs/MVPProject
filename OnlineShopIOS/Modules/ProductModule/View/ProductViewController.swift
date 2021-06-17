@@ -61,12 +61,12 @@ extension ProductViewController {
     }
 }
 
-extension ProductViewController: ProductView {
-    func successfulRequest() {
+extension ProductViewController: ProductListView {
+    func reloadProductListItems() {
         productCollectionView.reloadData()
     }
 
-    func failureRequest(error: Error) {
+    func showError(error: Error) {
         print(error.localizedDescription)
     }
 }

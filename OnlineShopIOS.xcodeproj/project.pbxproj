@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		113531FB267A04F0006245F1 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113531FA267A04F0006245F1 /* Protocols.swift */; };
+		113531FB267A04F0006245F1 /* ProductsScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113531FA267A04F0006245F1 /* ProductsScreenContract.swift */; };
 		F8183F4E266A26DF0098CE60 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8183F4D266A26DF0098CE60 /* Product.swift */; };
 		F839AEA02666476300CC44C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839AE9F2666476300CC44C3 /* AppDelegate.swift */; };
 		F839AEA22666476300CC44C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839AEA12666476300CC44C3 /* SceneDelegate.swift */; };
@@ -25,7 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		113531FA267A04F0006245F1 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		113531FA267A04F0006245F1 /* ProductsScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsScreenContract.swift; sourceTree = "<group>"; };
 		F8183F4D266A26DF0098CE60 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F839AE9C2666476300CC44C3 /* OnlineShopIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineShopIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F839AE9F2666476300CC44C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				F880B5FA266DF5E5000EDA09 /* ProductPresenter.swift */,
-				113531FA267A04F0006245F1 /* Protocols.swift */,
+				113531FA267A04F0006245F1 /* ProductsScreenContract.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -333,7 +333,7 @@
 				F86A3D84266F601000A519AF /* NetworkService.swift in Sources */,
 				F8532B6926667A220002C77A /* CartViewController.swift in Sources */,
 				F8183F4E266A26DF0098CE60 /* Product.swift in Sources */,
-				113531FB267A04F0006245F1 /* Protocols.swift in Sources */,
+				113531FB267A04F0006245F1 /* ProductsScreenContract.swift in Sources */,
 				F839AEA42666476300CC44C3 /* ProductViewController.swift in Sources */,
 				F86A3D88266F639600A519AF /* ExtensionDataSource.swift in Sources */,
 				F880B5FB266DF5E5000EDA09 /* ProductPresenter.swift in Sources */,

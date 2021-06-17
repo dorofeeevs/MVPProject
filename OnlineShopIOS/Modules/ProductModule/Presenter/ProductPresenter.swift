@@ -9,10 +9,10 @@ import Foundation
 
 class ProductPresenter: ProductViewPresenter {
     private(set) var products: [Product]?
-    private weak var view: ProductView?
+    private weak var view: ProductListView?
     private let networkService: NetworkServiceProtocol?
 
-    required init(view: ProductView, networkService: NetworkServiceProtocol) {
+    required init(view: ProductListView, networkService: NetworkServiceProtocol) {
         self.view = view
         self.networkService = networkService
         getProducts()
@@ -25,9 +25,9 @@ class ProductPresenter: ProductViewPresenter {
                 switch result {
                 case .success(let products):
                     self.products = products
-                    self.view?.successfulRequest()
+                    self.view?.reloadProductListItems()
                 case .failure(let error):
-                    self.view?.failureRequest(error: error)
+                    self.view?.showError(error: error)
                 }
             }
         }

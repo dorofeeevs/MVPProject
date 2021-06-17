@@ -16,11 +16,11 @@ extension ProductViewController: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let productItem = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.identifier, for: indexPath) as? ProductCollectionViewCell {
             guard let product = presenter?.products?[indexPath.row] else {return UICollectionViewCell.init()}
-            productItem.productTitleLabel.text = product.productTitle
-            productItem.productCostLabel.text = "\(product.productCost)"
-            productItem.productRaitingLabel.text = "\(product.productRaiting)"
-            productItem.productImageView.image = UIImage(named: product.productImageName )
-            productItem.productDescriptionLabel.text = product.productDescription
+            productItem.productTitleLabel.text = product.title
+            productItem.productCostLabel.text = product.getFormattedCost(product.cost)
+            productItem.productRaitingLabel.text = "\(product.rating)"
+            productItem.productImageView.image = UIImage(named: product.imageName )
+            productItem.productDescriptionLabel.text = product.description
         return productItem
         }
         return UICollectionViewCell()
