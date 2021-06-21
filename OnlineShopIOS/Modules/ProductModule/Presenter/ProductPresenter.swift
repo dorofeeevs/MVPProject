@@ -7,38 +7,33 @@
 
 import Foundation
 
-protocol ProductViewProtocol: AnyObject {
-    func success()
-    func failure(error: Error)
-}
+class ProductPresenter: ProductViewPresenter {
+    var router: Routable?
+    private(set) var products: [Product]?
+    private weak var view: ProductList?
+    private let networkService: NetworkServiceProtocol?
 
-protocol ProductViewPresenterProtocol: AnyObject {
-    init(view: ProductViewProtocol, networkService: NetworkServiceProtocol)
-    func getProducts()
-    var products: [Product]? {get set}
-}
-
-class ProductPresenter: ProductViewPresenterProtocol {
-    var products: [Product]?
-    weak var view: ProductViewProtocol?
-    let networkService: NetworkServiceProtocol?
-
-    required init(view: ProductViewProtocol, networkService: NetworkServiceProtocol) {
+    required init(view: ProductList, networkService: NetworkServiceProtocol, router: Routable ) {
         self.view = view
         self.networkService = networkService
-        getProducts()
+        self.router = router
+        loadProduct()
+    }
+    
+    func tapOnItemProduct(product: Product?) {
+        router?.showDetail(product: product)
     }
 
-    func getProducts() {
+    func loadProduct() {
         networkService?.getProducts { [weak self] result in
             guard let self = self else {return}
             DispatchQueue.main.async {
                 switch result {
                 case .success(let products):
                     self.products = products
-                    self.view?.success()
+                    self.view?.reloadProductListItems()
                 case .failure(let error):
-                    self.view?.failure(error: error)
+                    self.view?.showError(error: error)
                 }
             }
         }

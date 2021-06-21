@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol NetworkServiceProtocol {
-    func getProducts(completion: @escaping (Result<[Product]?, Error>) -> Void)
-}
-
 class NetworkService: NetworkServiceProtocol {
     func getProducts(completion: @escaping (Result<[Product]?, Error>) -> Void) {
         let urlString = "http://localhost:5000/api/Products"

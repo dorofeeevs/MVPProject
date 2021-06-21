@@ -8,7 +8,7 @@
 import UIKit
 
 class ProductViewController: UIViewController {
-    var presenter: ProductViewPresenterProtocol?
+    var presenter: ProductViewPresenter?
     lazy var productCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         collectionView.backgroundColor = .white
@@ -23,7 +23,6 @@ class ProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        createPresenter()
     }
 }
 
@@ -54,19 +53,14 @@ extension ProductViewController {
         layout.itemSize = CGSize(width: cellWidthHeightConstant, height: cellWidthHeightConstant)
         return layout
     }
-
-    private func createPresenter() {
-        let networkService = NetworkService()
-        presenter = ProductPresenter(view: self, networkService: networkService)
-    }
 }
 
-extension ProductViewController: ProductViewProtocol {
-    func success() {
+extension ProductViewController: ProductList {
+    func reloadProductListItems() {
         productCollectionView.reloadData()
     }
 
-    func failure(error: Error) {
+    func showError(error: Error) {
         print(error.localizedDescription)
     }
 }

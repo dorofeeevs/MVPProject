@@ -8,7 +8,8 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-
+    let assemblyBuilder = AssemblyModuleBuilder()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -18,7 +19,7 @@ class TabBarViewController: UITabBarController {
     }
 
     func setupVc() {
-        viewControllers = [createNavController(for: ProductViewController(), title: NSLocalizedString("Products", comment: ""), imageName: "products"),
+        viewControllers = [createNavController(for: assemblyBuilder.createProductModule(), title: NSLocalizedString("Products", comment: ""), imageName: "products"),
         createNavController(for: CartViewController(), title: NSLocalizedString("Cart", comment: ""), imageName: "cart"),
         createNavController(for: HistoryViewController(), title: NSLocalizedString("History", comment: ""), imageName: "history")]
     }

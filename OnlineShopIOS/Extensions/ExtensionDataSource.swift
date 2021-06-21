@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension ProductViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension ProductViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter?.products?.count ?? 0
     }
