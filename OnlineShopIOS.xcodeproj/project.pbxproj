@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113531FB267A04F0006245F1 /* ProductsScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113531FA267A04F0006245F1 /* ProductsScreenContract.swift */; };
+		F8183F4E266A26DF0098CE60 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8183F4D266A26DF0098CE60 /* Product.swift */; };
 		F839AEA02666476300CC44C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839AE9F2666476300CC44C3 /* AppDelegate.swift */; };
 		F839AEA22666476300CC44C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839AEA12666476300CC44C3 /* SceneDelegate.swift */; };
 		F839AEA42666476300CC44C3 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839AEA32666476300CC44C3 /* ProductViewController.swift */; };
@@ -15,10 +17,16 @@
 		F839AEAC2666476400CC44C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F839AEAA2666476400CC44C3 /* LaunchScreen.storyboard */; };
 		F8532B6926667A220002C77A /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8532B6826667A220002C77A /* CartViewController.swift */; };
 		F85B79FE26676C9D00368F65 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85B79FD26676C9D00368F65 /* HistoryViewController.swift */; };
+		F86A3D84266F601000A519AF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A3D83266F601000A519AF /* NetworkService.swift */; };
+		F86A3D88266F639600A519AF /* ExtensionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A3D87266F639600A519AF /* ExtensionDataSource.swift */; };
+		F86A3D8F266F6B3400A519AF /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A3D8E266F6B3400A519AF /* ProductCollectionViewCell.swift */; };
+		F880B5FB266DF5E5000EDA09 /* ProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F880B5FA266DF5E5000EDA09 /* ProductPresenter.swift */; };
 		F8D4BC062668DC0700D537BF /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D4BC052668DC0700D537BF /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		113531FA267A04F0006245F1 /* ProductsScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsScreenContract.swift; sourceTree = "<group>"; };
+		F8183F4D266A26DF0098CE60 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F839AE9C2666476300CC44C3 /* OnlineShopIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineShopIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F839AE9F2666476300CC44C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F839AEA12666476300CC44C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +37,10 @@
 		F839AEAD2666476400CC44C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8532B6826667A220002C77A /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		F85B79FD26676C9D00368F65 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		F86A3D83266F601000A519AF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		F86A3D87266F639600A519AF /* ExtensionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDataSource.swift; sourceTree = "<group>"; };
+		F86A3D8E266F6B3400A519AF /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductCollectionViewCell.swift; path = OnlineShopIOS/Modules/ProductModule/View/Cell/ProductCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		F880B5FA266DF5E5000EDA09 /* ProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPresenter.swift; sourceTree = "<group>"; };
 		F8D4BC052668DC0700D537BF /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,6 +55,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F8183F4F266A36D90098CE60 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8183F4D266A26DF0098CE60 /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F8183F52266A37560098CE60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F839AEA32666476300CC44C3 /* ProductViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F8183F56266A6C6A0098CE60 /* ProductModule */ = {
+			isa = PBXGroup;
+			children = (
+				F8183F52266A37560098CE60 /* View */,
+				F8183F57266A6CA30098CE60 /* Presenter */,
+			);
+			path = ProductModule;
+			sourceTree = "<group>";
+		};
+		F8183F57266A6CA30098CE60 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F880B5FA266DF5E5000EDA09 /* ProductPresenter.swift */,
+				113531FA267A04F0006245F1 /* ProductsScreenContract.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		F839AE932666476300CC44C3 = {
 			isa = PBXGroup;
 			children = (
@@ -62,18 +108,134 @@
 		F839AE9E2666476300CC44C3 /* OnlineShopIOS */ = {
 			isa = PBXGroup;
 			children = (
+				F86A3D86266F637E00A519AF /* Extensions */,
+				F8183F4F266A36D90098CE60 /* Model */,
+				F86A3D8B266F6A5F00A519AF /* Common */,
+				F86A3D77266F583300A519AF /* Modules */,
+				F86A3D82266F5FF800A519AF /* NetworkService */,
+				F86A3D81266F5A6F00A519AF /* Builder */,
+				F86A3D80266F58D700A519AF /* SupportingFiles */,
+			);
+			path = OnlineShopIOS;
+			sourceTree = "<group>";
+		};
+		F86A3D77266F583300A519AF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F86A3D7C266F589D00A519AF /* HistoryModule */,
+				F86A3D78266F584400A519AF /* CartModule */,
+				F8183F56266A6C6A0098CE60 /* ProductModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F86A3D78266F584400A519AF /* CartModule */ = {
+			isa = PBXGroup;
+			children = (
+				F86A3D7B266F586900A519AF /* Presenter */,
+				F86A3D79266F585B00A519AF /* View */,
+			);
+			path = CartModule;
+			sourceTree = "<group>";
+		};
+		F86A3D79266F585B00A519AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8532B6826667A220002C77A /* CartViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F86A3D7B266F586900A519AF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F86A3D7C266F589D00A519AF /* HistoryModule */ = {
+			isa = PBXGroup;
+			children = (
+				F86A3D7F266F58B500A519AF /* Presenter */,
+				F86A3D7D266F58A900A519AF /* View */,
+			);
+			path = HistoryModule;
+			sourceTree = "<group>";
+		};
+		F86A3D7D266F58A900A519AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F85B79FD26676C9D00368F65 /* HistoryViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F86A3D7F266F58B500A519AF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F86A3D80266F58D700A519AF /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				F839AE9F2666476300CC44C3 /* AppDelegate.swift */,
 				F839AEA12666476300CC44C3 /* SceneDelegate.swift */,
-				F8D4BC052668DC0700D537BF /* TabBarViewController.swift */,
-				F85B79FD26676C9D00368F65 /* HistoryViewController.swift */,
-				F839AEA32666476300CC44C3 /* ProductViewController.swift */,
-				F8532B6826667A220002C77A /* CartViewController.swift */,
 				F839AEA52666476300CC44C3 /* Main.storyboard */,
 				F839AEA82666476400CC44C3 /* Assets.xcassets */,
 				F839AEAA2666476400CC44C3 /* LaunchScreen.storyboard */,
 				F839AEAD2666476400CC44C3 /* Info.plist */,
 			);
-			path = OnlineShopIOS;
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		F86A3D81266F5A6F00A519AF /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				F8D4BC052668DC0700D537BF /* TabBarViewController.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		F86A3D82266F5FF800A519AF /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				F86A3D83266F601000A519AF /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		F86A3D86266F637E00A519AF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F86A3D87266F639600A519AF /* ExtensionDataSource.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F86A3D8B266F6A5F00A519AF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F86A3D8C266F6A6900A519AF /* Cells */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F86A3D8C266F6A6900A519AF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F86A3D8D266F6A7100A519AF /* ProductCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F86A3D8D266F6A7100A519AF /* ProductCell */ = {
+			isa = PBXGroup;
+			children = (
+				F86A3D8E266F6B3400A519AF /* ProductCollectionViewCell.swift */,
+			);
+			path = ProductCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,11 +330,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F86A3D84266F601000A519AF /* NetworkService.swift in Sources */,
 				F8532B6926667A220002C77A /* CartViewController.swift in Sources */,
+				F8183F4E266A26DF0098CE60 /* Product.swift in Sources */,
+				113531FB267A04F0006245F1 /* ProductsScreenContract.swift in Sources */,
 				F839AEA42666476300CC44C3 /* ProductViewController.swift in Sources */,
+				F86A3D88266F639600A519AF /* ExtensionDataSource.swift in Sources */,
+				F880B5FB266DF5E5000EDA09 /* ProductPresenter.swift in Sources */,
 				F839AEA02666476300CC44C3 /* AppDelegate.swift in Sources */,
 				F85B79FE26676C9D00368F65 /* HistoryViewController.swift in Sources */,
 				F8D4BC062668DC0700D537BF /* TabBarViewController.swift in Sources */,
+				F86A3D8F266F6B3400A519AF /* ProductCollectionViewCell.swift in Sources */,
 				F839AEA22666476300CC44C3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,7 +490,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23LWN74XLQ;
-				INFOPLIST_FILE = OnlineShopIOS/Info.plist;
+				INFOPLIST_FILE = OnlineShopIOS/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -341,7 +509,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23LWN74XLQ;
-				INFOPLIST_FILE = OnlineShopIOS/Info.plist;
+				INFOPLIST_FILE = OnlineShopIOS/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
