@@ -8,7 +8,7 @@
 import Foundation
 
 class ProductPresenter: ProductViewPresenter {
-    var router: Routable?
+    private var router: Routable?
     private(set) var products: [Product]?
     private weak var view: ProductList?
     private let networkService: NetworkServiceProtocol?
@@ -17,14 +17,14 @@ class ProductPresenter: ProductViewPresenter {
         self.view = view
         self.networkService = networkService
         self.router = router
-        loadProduct()
+        loadProducts()
     }
     
     func tapOnItemProduct(product: Product?) {
         router?.showDetail(product: product)
     }
 
-    func loadProduct() {
+    func loadProducts() {
         networkService?.getProducts { [weak self] result in
             guard let self = self else {return}
             DispatchQueue.main.async {

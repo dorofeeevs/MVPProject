@@ -8,7 +8,7 @@
 import UIKit
 
 class Router: Routable {
-    var viewController: UIViewController?
+    internal var viewController: UIViewController?
     var assemblyBuilder: MvpModuleCreatable?
     
     init(viewController: UIViewController, assemblyBuilder: MvpModuleCreatable) {

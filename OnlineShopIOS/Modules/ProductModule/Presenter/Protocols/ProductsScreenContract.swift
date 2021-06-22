@@ -15,6 +15,6 @@ protocol ProductList: AnyObject {
 protocol ProductViewPresenter: AnyObject {
     var products: [Product]? {get}
     init(view: ProductList, networkService: NetworkServiceProtocol, router: Routable)
-    func loadProduct()
+    func loadProducts()
     func tapOnItemProduct(product: Product?)
 }
