@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ProductPresenter: ProductViewPresenter {
+class ProductListPresenter: ProductViewPresenter {
     private var router: Routable?
     private(set) var products: [Product]?
     private weak var view: ProductList?

@@ -12,7 +12,7 @@ class AssemblyModuleBuilder: MvpModuleCreatable {
         let view = ProductViewController()
         let router = Router(viewController: view, assemblyBuilder: self)
         let networkService = NetworkService()
-        let presenter = ProductPresenter(view: view, networkService: networkService, router: router)
+        let presenter = ProductListPresenter(view: view, networkService: networkService, router: router)
         view.presenter = presenter
         return view
     }
