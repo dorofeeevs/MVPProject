@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol GeneralRouterCreatable {
-    var viewController: UIViewController? {get}
-    var assemblyBuilder: MvpModuleCreatable? {get}
-}
-
-protocol Routable: GeneralRouterCreatable {
+protocol Routable {
     func showDetail(product: Product?)
 }

@@ -1,2 +1,4 @@
 .DC_Store
 .DS_Store
+*.xcuserstate
+*.xcbkptlist

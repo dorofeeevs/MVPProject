@@ -8,8 +8,8 @@
 import UIKit
 
 class Router: Routable {
-    internal var viewController: UIViewController?
-    var assemblyBuilder: MvpModuleCreatable?
+    private var viewController: UIViewController?
+    private var assemblyBuilder: MvpModuleCreatable?
     
     init(viewController: UIViewController, assemblyBuilder: MvpModuleCreatable) {
         self.viewController = viewController
