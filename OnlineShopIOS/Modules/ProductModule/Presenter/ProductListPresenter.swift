@@ -7,18 +7,24 @@
 
 import Foundation
 
-class ProductPresenter: ProductViewPresenter {
+class ProductListPresenter: ProductViewPresenter {
+    private var router: Routable?
     private(set) var products: [Product]?
-    private weak var view: ProductListView?
+    private weak var view: ProductList?
     private let networkService: NetworkServiceProtocol?
 
-    required init(view: ProductListView, networkService: NetworkServiceProtocol) {
+    required init(view: ProductList, networkService: NetworkServiceProtocol, router: Routable ) {
         self.view = view
         self.networkService = networkService
-        getProducts()
+        self.router = router
+        loadProducts()
+    }
+    
+    func tapOnItemProduct(product: Product?) {
+        router?.showDetail(product: product)
     }
 
-    func getProducts() {
+    func loadProducts() {
         networkService?.getProducts { [weak self] result in
             guard let self = self else {return}
             DispatchQueue.main.async {
