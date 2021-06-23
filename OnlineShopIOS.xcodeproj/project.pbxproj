@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1111B89C268332A80093D994 /* DetailProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111B89B268332A80093D994 /* DetailProductPresenter.swift */; };
+		1111B89F26836E400093D994 /* DetailProductViewPresenterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111B89E26836E400093D994 /* DetailProductViewPresenterContract.swift */; };
 		113531FB267A04F0006245F1 /* ProductsScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113531FA267A04F0006245F1 /* ProductsScreenContract.swift */; };
 		116112842681DF92004AB021 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116112832681DF92004AB021 /* DetailViewController.storyboard */; };
 		11999EF92680CC2200BF7496 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11999EF72680CC2200BF7496 /* DetailViewController.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		1111B89B268332A80093D994 /* DetailProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductPresenter.swift; sourceTree = "<group>"; };
+		1111B89E26836E400093D994 /* DetailProductViewPresenterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductViewPresenterContract.swift; sourceTree = "<group>"; };
 		113531FA267A04F0006245F1 /* ProductsScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsScreenContract.swift; sourceTree = "<group>"; };
 		116112832681DF92004AB021 /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
 		11999EF72680CC2200BF7496 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1111B89D26836DFF0093D994 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1111B89E26836E400093D994 /* DetailProductViewPresenterContract.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		11999EF42680CBF300BF7496 /* DetailModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +92,7 @@
 		11999EF62680CC0900BF7496 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				1111B89D26836DFF0093D994 /* Protocols */,
 				1111B89B268332A80093D994 /* DetailProductPresenter.swift */,
 			);
 			path = Presenter;
@@ -367,6 +378,7 @@
 				F86A3D84266F601000A519AF /* NetworkService.swift in Sources */,
 				F8532B6926667A220002C77A /* CartViewController.swift in Sources */,
 				F8183F4E266A26DF0098CE60 /* Product.swift in Sources */,
+				1111B89F26836E400093D994 /* DetailProductViewPresenterContract.swift in Sources */,
 				113531FB267A04F0006245F1 /* ProductsScreenContract.swift in Sources */,
 				F839AEA42666476300CC44C3 /* ProductViewController.swift in Sources */,
 				F86A3D88266F639600A519AF /* ExtensionDataSource.swift in Sources */,

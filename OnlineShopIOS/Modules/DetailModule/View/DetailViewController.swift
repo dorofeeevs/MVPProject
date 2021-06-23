@@ -20,9 +20,6 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         presenter.loadProductInfo()
     }
-    
-    @IBAction func backButton(_ sender: Any) {
-    }
 }
 
 extension DetailViewController: DetailProductView {
