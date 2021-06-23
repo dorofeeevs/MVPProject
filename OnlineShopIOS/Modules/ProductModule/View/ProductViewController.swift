@@ -57,7 +57,7 @@ extension ProductViewController {
 
     private func createPresenter() {
         let networkService = NetworkService()
-        presenter = ProductPresenter(view: self, networkService: networkService)
+        presenter = ProductListPresenter(view: self, networkService: networkService)
     }
 }
 

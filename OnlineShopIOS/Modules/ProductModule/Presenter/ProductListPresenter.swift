@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ProductPresenter: ProductViewPresenter {
+class ProductListPresenter: ProductViewPresenter {
     private(set) var products: [Product]?
     private weak var view: ProductListView?
     private let networkService: NetworkServiceProtocol?
