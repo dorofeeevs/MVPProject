@@ -8,26 +8,25 @@
 import Foundation
 
 protocol DetailProductView: AnyObject {
-    func setProduct(product: Product?)
+    func showProduct(product: Product?)
 }
 
 protocol DetailViewPresenter: AnyObject {
     init(view: DetailProductView, networkService: NetworkServiceProtocol, product: Product?)
-    func showProduct()
+    func loadProductInfo()
 }
 
 class DetailProductPresenter: DetailViewPresenter {
-    weak var view: DetailProductView?
-    let networkService: NetworkServiceProtocol!
-    var product: Product?
+    private weak var view: DetailProductView?
+    private let networkService: NetworkServiceProtocol!
+    private var product: Product?
     required init(view: DetailProductView, networkService: NetworkServiceProtocol, product: Product?) {
         self.view = view
         self.networkService = networkService
         self.product = product
     }
     
-    func showProduct() {
-        self.view?.setProduct(product: product)
+    func loadProductInfo() {
+        self.view?.showProduct(product: product)
     }
-    
 }

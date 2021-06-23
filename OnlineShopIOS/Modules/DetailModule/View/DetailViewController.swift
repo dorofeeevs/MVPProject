@@ -8,17 +8,17 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    @IBOutlet weak var detailProductTableView: UITableView!
-    @IBOutlet weak var detailProductImageView: UIImageView!
-    @IBOutlet weak var detailProductNameLabel: UILabel!
-    @IBOutlet weak var detailProductDescriptionLabel: UILabel!
-    @IBOutlet weak var detailProductCostLabel: UILabel!
+    @IBOutlet private weak var detailProductTableView: UITableView!
+    @IBOutlet private weak var detailProductImageView: UIImageView!
+    @IBOutlet private weak var detailProductNameLabel: UILabel!
+    @IBOutlet private weak var detailProductDescriptionLabel: UILabel!
+    @IBOutlet private weak var detailProductCostLabel: UILabel!
     
-    var presenter: DetailViewPresenter!
+    private var presenter: DetailViewPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.showProduct()
+        presenter.loadProductInfo()
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
 }
 
 extension DetailViewController: DetailProductView {
-    func setProduct(product: Product?) {
+    func showProduct(product: Product?) {
         detailProductNameLabel.text = product?.title
         detailProductDescriptionLabel.text = product?.description
         detailProductCostLabel.text = String(describing: product?.cost)
