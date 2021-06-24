@@ -69,6 +69,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         label.font = UIFont(name: "HelveticaNeue", size: 15)
         label.font = UIFont.systemFont(ofSize: 8, weight: .black)
         label.textColor = .black
+        label.numberOfLines = 0
         label.textAlignment = .center
         label.layer.cornerRadius = 10
         label.baselineAdjustment = .none

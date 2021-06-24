@@ -2,4 +2,7 @@
 .DS_Store
 *.xcuserstate
 *.xcbkptlist
+<<<<<<< HEAD
 *.xcuserstate~Stashed
+=======
+>>>>>>> origin

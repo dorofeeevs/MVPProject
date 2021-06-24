@@ -23,7 +23,6 @@ class ProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        createPresenter()
     }
 }
 
@@ -54,14 +53,17 @@ extension ProductViewController {
         layout.itemSize = CGSize(width: cellWidthHeightConstant, height: cellWidthHeightConstant)
         return layout
     }
+<<<<<<< HEAD
 
     private func createPresenter() {
         let networkService = NetworkService()
         presenter = ProductListPresenter(view: self, networkService: networkService)
     }
+=======
+>>>>>>> origin
 }
 
-extension ProductViewController: ProductListView {
+extension ProductViewController: ProductList {
     func reloadProductListItems() {
         productCollectionView.reloadData()
     }
