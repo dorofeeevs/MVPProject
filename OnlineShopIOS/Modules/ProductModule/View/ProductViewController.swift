@@ -9,6 +9,14 @@ import UIKit
 
 class ProductViewController: UIViewController {
     var presenter: ProductViewPresenter?
+    private var searchController = UISearchController(searchResultsController: nil)
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
     lazy var productCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         collectionView.backgroundColor = .white
@@ -23,6 +31,7 @@ class ProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        createSearchController()
     }
 }
 
@@ -62,5 +71,20 @@ extension ProductViewController: ProductList {
 
     func showError(error: Error) {
         print(error.localizedDescription)
+    }
+}
+
+extension ProductViewController: UISearchResultsUpdating {
+    func createSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search..."
+        navigationItem.searchController = searchController
+        definesPresentationContext = false
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        presenter?.filterContentForSearch(searchController.searchBar.text!)
+        self.productCollectionView.reloadData()
     }
 }

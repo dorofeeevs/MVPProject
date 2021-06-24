@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 class ProductListPresenter: ProductViewPresenter {
     private var router: Routable?
     private(set) var products: [Product]?
     private weak var view: ProductList?
     private let networkService: NetworkServiceProtocol?
+    var filtredProducts: [Product]?
 
     required init(view: ProductList, networkService: NetworkServiceProtocol, router: Routable ) {
         self.view = view
@@ -37,5 +39,11 @@ class ProductListPresenter: ProductViewPresenter {
                 }
             }
         }
+    }
+    
+    func filterContentForSearch(_ searchText: String) {
+        filtredProducts = products?.filter({ (products: Product) -> Bool in
+            return products.title.lowercased().contains(searchText.lowercased())
+        })
     }
 }

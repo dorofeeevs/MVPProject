@@ -14,7 +14,9 @@ protocol ProductList: AnyObject {
 
 protocol ProductViewPresenter: AnyObject {
     var products: [Product]? {get}
+    var filtredProducts: [Product]? {get}
     init(view: ProductList, networkService: NetworkServiceProtocol, router: Routable)
     func loadProducts()
+    func filterContentForSearch(_ searchText: String)
     func tapOnItemProduct(product: Product?)
 }
