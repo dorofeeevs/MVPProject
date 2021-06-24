@@ -53,14 +53,6 @@ extension ProductViewController {
         layout.itemSize = CGSize(width: cellWidthHeightConstant, height: cellWidthHeightConstant)
         return layout
     }
-<<<<<<< HEAD
-
-    private func createPresenter() {
-        let networkService = NetworkService()
-        presenter = ProductListPresenter(view: self, networkService: networkService)
-    }
-=======
->>>>>>> origin
 }
 
 extension ProductViewController: ProductList {

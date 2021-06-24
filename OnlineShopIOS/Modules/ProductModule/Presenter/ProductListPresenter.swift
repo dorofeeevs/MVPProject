@@ -8,10 +8,7 @@
 import Foundation
 
 class ProductListPresenter: ProductViewPresenter {
-<<<<<<< HEAD:OnlineShopIOS/Modules/ProductModule/Presenter/ProductListPresenter.swift
-=======
     private var router: Routable?
->>>>>>> origin:OnlineShopIOS/Modules/ProductModule/Presenter/ProductPresenter.swift
     private(set) var products: [Product]?
     private weak var view: ProductList?
     private let networkService: NetworkServiceProtocol?
