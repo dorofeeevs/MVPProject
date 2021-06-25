@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1111B89C268332A80093D994 /* DetailProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111B89B268332A80093D994 /* DetailProductPresenter.swift */; };
+		1111B89F26836E400093D994 /* DetailProductViewPresenterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111B89E26836E400093D994 /* DetailProductViewPresenterContract.swift */; };
 		113531C42678D97B006245F1 /* AssemblyModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113531C32678D97B006245F1 /* AssemblyModuleBuilder.swift */; };
 		113531CF2678E962006245F1 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113531CE2678E962006245F1 /* ExtensionDelegate.swift */; };
+		113531FB267A04F0006245F1 /* ProductsScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113531FA267A04F0006245F1 /* ProductsScreenContract.swift */; };
+		116112842681DF92004AB021 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116112832681DF92004AB021 /* DetailViewController.storyboard */; };
 		11999EE92680AD0400BF7496 /* RoutingContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11999EE82680AD0400BF7496 /* RoutingContract.swift */; };
 		11999EEB2680AD1E00BF7496 /* BuilderContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11999EEA2680AD1E00BF7496 /* BuilderContract.swift */; };
 		11999EED2680ADFA00BF7496 /* NetworkServiceContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11999EEC2680ADFA00BF7496 /* NetworkServiceContract.swift */; };
-		11999EEF2680AE1F00BF7496 /* ProductsScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11999EEE2680AE1F00BF7496 /* ProductsScreenContract.swift */; };
+		11999EF92680CC2200BF7496 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11999EF72680CC2200BF7496 /* DetailViewController.swift */; };
 		11E4F28926807F7600B5FC4E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F28826807F7600B5FC4E /* Router.swift */; };
 		F8183F4E266A26DF0098CE60 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8183F4D266A26DF0098CE60 /* Product.swift */; };
 		F839AEA02666476300CC44C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839AE9F2666476300CC44C3 /* AppDelegate.swift */; };
@@ -31,12 +35,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1111B89B268332A80093D994 /* DetailProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductPresenter.swift; sourceTree = "<group>"; };
+		1111B89E26836E400093D994 /* DetailProductViewPresenterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductViewPresenterContract.swift; sourceTree = "<group>"; };
 		113531C32678D97B006245F1 /* AssemblyModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyModuleBuilder.swift; sourceTree = "<group>"; };
 		113531CE2678E962006245F1 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		113531FA267A04F0006245F1 /* ProductsScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsScreenContract.swift; sourceTree = "<group>"; };
+		116112832681DF92004AB021 /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
 		11999EE82680AD0400BF7496 /* RoutingContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingContract.swift; sourceTree = "<group>"; };
 		11999EEA2680AD1E00BF7496 /* BuilderContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderContract.swift; sourceTree = "<group>"; };
 		11999EEC2680ADFA00BF7496 /* NetworkServiceContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceContract.swift; sourceTree = "<group>"; };
-		11999EEE2680AE1F00BF7496 /* ProductsScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsScreenContract.swift; sourceTree = "<group>"; };
+		11999EF72680CC2200BF7496 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		11E4F28826807F7600B5FC4E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F8183F4D266A26DF0098CE60 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F839AE9C2666476300CC44C3 /* OnlineShopIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineShopIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +75,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1111B89D26836DFF0093D994 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1111B89E26836E400093D994 /* DetailProductViewPresenterContract.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		1111B8A226851C670093D994 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1111B8A326851C790093D994 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		11382316267A1C2000AF5225 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,7 +109,7 @@
 		11999EF02680AE6200BF7496 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				11999EEE2680AE1F00BF7496 /* ProductsScreenContract.swift */,
+				113531FA267A04F0006245F1 /* ProductsScreenContract.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -106,6 +136,33 @@
 				11999EE82680AD0400BF7496 /* RoutingContract.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		11999EF42680CBF300BF7496 /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				11999EF62680CC0900BF7496 /* Presenter */,
+				11999EF52680CC0300BF7496 /* View */,
+			);
+			path = DetailModule;
+			sourceTree = "<group>";
+		};
+		11999EF52680CC0300BF7496 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11999EF72680CC2200BF7496 /* DetailViewController.swift */,
+				116112832681DF92004AB021 /* DetailViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11999EF62680CC0900BF7496 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1111B89D26836DFF0093D994 /* Protocols */,
+				1111B89B268332A80093D994 /* DetailProductPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		F8183F4F266A36D90098CE60 /* Model */ = {
@@ -136,8 +193,8 @@
 		F8183F57266A6CA30098CE60 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				11999EF02680AE6200BF7496 /* Protocols */,
 				F880B5FA266DF5E5000EDA09 /* ProductListPresenter.swift */,
+				11999EF02680AE6200BF7496 /* Protocols */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -176,6 +233,7 @@
 		F86A3D77266F583300A519AF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				11999EF42680CBF300BF7496 /* DetailModule */,
 				F86A3D7C266F589D00A519AF /* HistoryModule */,
 				F86A3D78266F584400A519AF /* CartModule */,
 				F8183F56266A6C6A0098CE60 /* ProductModule */,
@@ -186,7 +244,7 @@
 		F86A3D78266F584400A519AF /* CartModule */ = {
 			isa = PBXGroup;
 			children = (
-				F86A3D7B266F586900A519AF /* Presenter */,
+				1111B8A326851C790093D994 /* Presenter */,
 				F86A3D79266F585B00A519AF /* View */,
 			);
 			path = CartModule;
@@ -200,17 +258,10 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F86A3D7B266F586900A519AF /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		F86A3D7C266F589D00A519AF /* HistoryModule */ = {
 			isa = PBXGroup;
 			children = (
-				F86A3D7F266F58B500A519AF /* Presenter */,
+				1111B8A226851C670093D994 /* Presenter */,
 				F86A3D7D266F58A900A519AF /* View */,
 			);
 			path = HistoryModule;
@@ -222,13 +273,6 @@
 				F85B79FD26676C9D00368F65 /* HistoryViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		F86A3D7F266F58B500A519AF /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		F86A3D80266F58D700A519AF /* SupportingFiles */ = {
@@ -354,6 +398,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				116112842681DF92004AB021 /* DetailViewController.storyboard in Resources */,
 				F839AEAC2666476400CC44C3 /* LaunchScreen.storyboard in Resources */,
 				F839AEA92666476400CC44C3 /* Assets.xcassets in Resources */,
 				F839AEA72666476300CC44C3 /* Main.storyboard in Resources */,
@@ -388,20 +433,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11999EEF2680AE1F00BF7496 /* ProductsScreenContract.swift in Sources */,
 				11999EED2680ADFA00BF7496 /* NetworkServiceContract.swift in Sources */,
 				F86A3D84266F601000A519AF /* NetworkService.swift in Sources */,
 				F8532B6926667A220002C77A /* CartViewController.swift in Sources */,
 				F8183F4E266A26DF0098CE60 /* Product.swift in Sources */,
+				1111B89F26836E400093D994 /* DetailProductViewPresenterContract.swift in Sources */,
+				113531FB267A04F0006245F1 /* ProductsScreenContract.swift in Sources */,
 				F839AEA42666476300CC44C3 /* ProductViewController.swift in Sources */,
 				F86A3D88266F639600A519AF /* ExtensionDataSource.swift in Sources */,
+				F839AEA42666476300CC44C3 /* ProductViewController.swift in Sources */,
 				113531CF2678E962006245F1 /* ExtensionDelegate.swift in Sources */,
 				11999EE92680AD0400BF7496 /* RoutingContract.swift in Sources */,
 				F880B5FB266DF5E5000EDA09 /* ProductListPresenter.swift in Sources */,
 				F839AEA02666476300CC44C3 /* AppDelegate.swift in Sources */,
+				11999EF92680CC2200BF7496 /* DetailViewController.swift in Sources */,
 				F85B79FE26676C9D00368F65 /* HistoryViewController.swift in Sources */,
 				11E4F28926807F7600B5FC4E /* Router.swift in Sources */,
 				F8D4BC062668DC0700D537BF /* TabBarViewController.swift in Sources */,
+				1111B89C268332A80093D994 /* DetailProductPresenter.swift in Sources */,
 				F86A3D8F266F6B3400A519AF /* ProductCollectionViewCell.swift in Sources */,
 				11999EEB2680AD1E00BF7496 /* BuilderContract.swift in Sources */,
 				F839AEA22666476300CC44C3 /* SceneDelegate.swift in Sources */,
