@@ -19,6 +19,8 @@ class DetailProductPresenter: DetailViewPresenter {
     }
     
     func loadProductInfo() {
+        view?.startActivity(style: .medium, isUserInteractionEnabled: true)
         self.view?.showProduct(product: product)
+        view?.stopActivity()
     }
 }

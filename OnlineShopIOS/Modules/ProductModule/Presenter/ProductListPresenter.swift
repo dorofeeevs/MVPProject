@@ -25,8 +25,10 @@ class ProductListPresenter: ProductViewPresenter {
     }
 
     func loadProducts() {
+        view?.startActivity(style: .large, isUserInteractionEnabled: true)
         networkService?.getProducts { [weak self] result in
             guard let self = self else {return}
+            self.view?.stopActivity()
             DispatchQueue.main.async {
                 switch result {
                 case .success(let products):

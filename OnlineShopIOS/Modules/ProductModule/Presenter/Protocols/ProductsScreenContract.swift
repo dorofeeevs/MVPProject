@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ProductList: AnyObject {
+protocol ProductList: AnyObject, ActivityIndicatorPresentable {
     func reloadProductListItems()
     func showError(error: Error)
 }

@@ -17,6 +17,7 @@
 		11999EEB2680AD1E00BF7496 /* BuilderContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11999EEA2680AD1E00BF7496 /* BuilderContract.swift */; };
 		11999EED2680ADFA00BF7496 /* NetworkServiceContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11999EEC2680ADFA00BF7496 /* NetworkServiceContract.swift */; };
 		11999EF92680CC2200BF7496 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11999EF72680CC2200BF7496 /* DetailViewController.swift */; };
+		11AD86AE268C626400B8B54F /* UIViewController_activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AD86AD268C626400B8B54F /* UIViewController_activity.swift */; };
 		11E4F28926807F7600B5FC4E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F28826807F7600B5FC4E /* Router.swift */; };
 		F8183F4E266A26DF0098CE60 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8183F4D266A26DF0098CE60 /* Product.swift */; };
 		F839AEA02666476300CC44C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839AE9F2666476300CC44C3 /* AppDelegate.swift */; };
@@ -45,6 +46,7 @@
 		11999EEA2680AD1E00BF7496 /* BuilderContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderContract.swift; sourceTree = "<group>"; };
 		11999EEC2680ADFA00BF7496 /* NetworkServiceContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceContract.swift; sourceTree = "<group>"; };
 		11999EF72680CC2200BF7496 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		11AD86AD268C626400B8B54F /* UIViewController_activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_activity.swift; sourceTree = "<group>"; };
 		11E4F28826807F7600B5FC4E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F8183F4D266A26DF0098CE60 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F839AE9C2666476300CC44C3 /* OnlineShopIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineShopIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,6 +314,7 @@
 			children = (
 				F86A3D87266F639600A519AF /* ExtensionDataSource.swift */,
 				113531CE2678E962006245F1 /* ExtensionDelegate.swift */,
+				11AD86AD268C626400B8B54F /* UIViewController_activity.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				F86A3D88266F639600A519AF /* ExtensionDataSource.swift in Sources */,
 				F839AEA42666476300CC44C3 /* ProductViewController.swift in Sources */,
 				113531CF2678E962006245F1 /* ExtensionDelegate.swift in Sources */,
+				11AD86AE268C626400B8B54F /* UIViewController_activity.swift in Sources */,
 				11999EE92680AD0400BF7496 /* RoutingContract.swift in Sources */,
 				F880B5FB266DF5E5000EDA09 /* ProductListPresenter.swift in Sources */,
 				F839AEA02666476300CC44C3 /* AppDelegate.swift in Sources */,
