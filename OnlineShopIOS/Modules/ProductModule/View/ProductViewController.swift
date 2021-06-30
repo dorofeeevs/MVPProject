@@ -17,6 +17,7 @@ class ProductViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.addRefreshControll(actionTarget: self, action: #selector(refreshData))
         return collectionView
     }()
 
@@ -62,5 +63,13 @@ extension ProductViewController: ProductList {
 
     func showError(error: Error) {
         print(error.localizedDescription)
+    }
+    
+    // MARK: - obgc Method
+    
+    @objc func refreshData(_ refreshControl: UIRefreshControl) {
+        productCollectionView.startRefreshing()
+        productCollectionView.reloadData()
+        productCollectionView.endRefreshing(deadline: .now() + .seconds(2))
     }
 }
