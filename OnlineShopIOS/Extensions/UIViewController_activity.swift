@@ -8,6 +8,7 @@
 import UIKit
 
 protocol ActivityIndicatorPresentable {
+    // MARK: - Public methods
     func startActivity(style: UIActivityIndicatorView.Style, isUserInteractionEnabled: Bool)
     func stopActivity()
 }
@@ -39,6 +40,7 @@ extension ActivityIndicatorPresentable where Self: UIViewController {
         }
     }
     
+    // MARK: - Private method
     private func findActivity() -> UIActivityIndicatorView? {
         return view.subviews.compactMap { $0 as? UIActivityIndicatorView }.first
     }
