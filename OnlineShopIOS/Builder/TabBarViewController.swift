@@ -9,7 +9,7 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
     let assemblyBuilder = AssemblyModuleBuilder()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground

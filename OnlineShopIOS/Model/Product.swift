@@ -36,9 +36,8 @@ struct Product: Codable {
         imageName = try container.decode(String.self, forKey: .imageName)
         categoryId = try container.decode(Int.self, forKey: .categoryId)
     }
-    
+
     func getFormattedCost(_ cost: Double) -> String {
         return "\(cost) ₽"
     }
 }
-

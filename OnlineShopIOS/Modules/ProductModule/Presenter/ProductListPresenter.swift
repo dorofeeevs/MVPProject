@@ -19,16 +19,16 @@ class ProductListPresenter: ProductViewPresenter {
         self.router = router
         loadProducts()
     }
-    
+
     func tapOnItemProduct(product: Product?) {
         router?.showDetail(product: product)
     }
 
     func loadProducts() {
-        view?.startActivity(style: .large, isUserInteractionEnabled: true)
+        self.view?.showActivityIndicator(style: .large, isUserInteractionEnabled: true)
         networkService?.getProducts { [weak self] result in
             guard let self = self else {return}
-            self.view?.stopActivity()
+            self.view?.hideActivityIndicator()
             DispatchQueue.main.async {
                 switch result {
                 case .success(let products):
