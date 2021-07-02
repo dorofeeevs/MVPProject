@@ -28,12 +28,6 @@ class RefreshControl: UIRefreshControl {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Private method
-    private func addTarget() {
-        guard let actionTarget = actionTarget, let actionSelector = actionSelector else { return }
-        addTarget(actionTarget, action: actionSelector, for: .valueChanged)
-    }
-    
     // MARK: - Public methods
     func endRefreshing(deadline: DispatchTime? = nil) {
         guard let deadline = deadline else { endRefreshing(); return }
@@ -47,6 +41,12 @@ class RefreshControl: UIRefreshControl {
     func generateRefreshEvent() {
         beginRefreshing()
         sendActions(for: .valueChanged)
+    }
+    
+    // MARK: - Private method
+    private func addTarget() {
+        guard let actionTarget = actionTarget, let actionSelector = actionSelector else { return }
+        addTarget(actionTarget, action: actionSelector, for: .valueChanged)
     }
 }
 
