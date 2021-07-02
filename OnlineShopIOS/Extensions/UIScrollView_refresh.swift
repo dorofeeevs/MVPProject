@@ -1,8 +1,8 @@
 //
-//  UIViewController_refresh.swift
+//  UIScrollView_refresh.swift
 //  OnlineShopIOS
 //
-//  Created by Aleksandr Dorofeev on 30.06.2021.
+//  Created by Aleksandr Dorofeev on 7/2/21.
 //
 
 import UIKit
@@ -11,23 +11,23 @@ class RefreshControl: UIRefreshControl {
     // MARK: - Private properties
     private weak var actionTarget: AnyObject?
     private var actionSelector: Selector?
-    
-    // MARK: - Initialization
+
+    // MARK: - Initializations
     override init() {
         super.init()
     }
-    
+
     convenience init(actionTarget: AnyObject?, actionSelector: Selector) {
         self.init()
         self.actionTarget = actionTarget
         self.actionSelector = actionSelector
         addTarget()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - Public methods
     func endRefreshing(deadline: DispatchTime? = nil) {
         guard let deadline = deadline else { endRefreshing(); return }
@@ -37,12 +37,12 @@ class RefreshControl: UIRefreshControl {
             }
         }
     }
-    
+
     func generateRefreshEvent() {
         beginRefreshing()
         sendActions(for: .valueChanged)
     }
-    
+
     // MARK: - Private method
     private func addTarget() {
         guard let actionTarget = actionTarget, let actionSelector = actionSelector else { return }
@@ -53,7 +53,7 @@ class RefreshControl: UIRefreshControl {
 public extension UIScrollView {
     // MARK: - Private properties
     private var _refreshControl: RefreshControl? {
-        return (refreshControl as! RefreshControl)
+        return (refreshControl as? RefreshControl)
     }
 
     private var canStartRefreshing: Bool {

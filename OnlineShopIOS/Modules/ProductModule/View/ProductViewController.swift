@@ -64,9 +64,9 @@ extension ProductViewController: ProductList {
     func showError(error: Error) {
         print(error.localizedDescription)
     }
-    
+
     // MARK: - obgc Method
-    
+
     @objc func refreshData(_ refreshControl: UIRefreshControl) {
         productCollectionView.startRefreshing()
         productCollectionView.reloadData()
