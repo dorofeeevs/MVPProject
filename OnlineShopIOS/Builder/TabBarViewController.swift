@@ -28,8 +28,10 @@ class TabBarViewController: UITabBarController {
         let navController = UINavigationController(rootViewController: rootViewController)
         navController.tabBarItem.title = title
         navController.tabBarItem.image = UIImage(named: imageName)
-        navController.navigationBar.prefersLargeTitles = true
-        navController.navigationItem.largeTitleDisplayMode = .always
+        navController.navigationBar.shadowImage = UIImage()
+        navController.navigationBar.isTranslucent = true
+        navController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navController.navigationBar.backgroundColor = .clear
         rootViewController.navigationItem.title = title
         return navController
     }

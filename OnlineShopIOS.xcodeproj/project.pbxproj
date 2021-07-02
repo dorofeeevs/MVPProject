@@ -448,6 +448,7 @@
 				113531CF2678E962006245F1 /* ExtensionDelegate.swift in Sources */,
 				11AD86AE268C626400B8B54F /* UIViewController_activity.swift in Sources */,
 				11999EE92680AD0400BF7496 /* RoutingContract.swift in Sources */,
+				11AD86B0268C72E700B8B54F /* UIScrollView_refresh.swift in Sources */,
 				F880B5FB266DF5E5000EDA09 /* ProductListPresenter.swift in Sources */,
 				F839AEA02666476300CC44C3 /* AppDelegate.swift in Sources */,
 				11999EF92680CC2200BF7496 /* DetailViewController.swift in Sources */,
