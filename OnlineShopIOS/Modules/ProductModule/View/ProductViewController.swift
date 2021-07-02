@@ -9,7 +9,9 @@ import UIKit
 
 class ProductViewController: UIViewController {
     var presenter: ProductViewPresenter?
-    lazy var productCollectionView: UICollectionView = {
+
+    // MARK: - Lazy property
+    private lazy var productCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         collectionView.backgroundColor = .white
         collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
@@ -28,6 +30,7 @@ class ProductViewController: UIViewController {
 }
 
 extension ProductViewController {
+    // MARK: - Private methods
     private func setupUI() {
         overrideUserInterfaceStyle = .light
         self.view.backgroundColor = .white
@@ -57,6 +60,7 @@ extension ProductViewController {
 }
 
 extension ProductViewController: ProductList {
+    // MARK: - Methods product list screen
     func reloadProductListItems() {
         productCollectionView.reloadData()
     }
@@ -66,7 +70,6 @@ extension ProductViewController: ProductList {
     }
 
     // MARK: - obgc Method
-
     @objc func refreshData(_ refreshControl: UIRefreshControl) {
         productCollectionView.startRefreshing()
         productCollectionView.reloadData()
