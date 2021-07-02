@@ -12,7 +12,7 @@ class RefreshControl: UIRefreshControl {
     private weak var actionTarget: AnyObject?
     private var actionSelector: Selector?
     
-    // MARK: - Initializations
+    // MARK: - Initialization
     override init() {
         super.init()
     }

@@ -13,9 +13,9 @@ class DetailViewController: UIViewController {
     @IBOutlet private weak var detailProductNameLabel: UILabel!
     @IBOutlet private weak var detailProductDescriptionLabel: UILabel!
     @IBOutlet private weak var detailProductCostLabel: UILabel!
-    
+
     private var presenter: DetailViewPresenter!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.loadProductInfo()

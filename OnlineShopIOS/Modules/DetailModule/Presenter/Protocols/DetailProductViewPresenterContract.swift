@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DetailProductView: AnyObject {
+protocol DetailProductView: AnyObject, ActivityIndicatorPresentable {
     func showProduct(product: Product?)
 }
 
