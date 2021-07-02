@@ -8,25 +8,40 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    // MARK: - IBoutlets
     @IBOutlet private weak var detailProductTableView: UITableView!
-    @IBOutlet private weak var detailProductImageView: UIImageView!
-    @IBOutlet private weak var detailProductNameLabel: UILabel!
-    @IBOutlet private weak var detailProductDescriptionLabel: UILabel!
-    @IBOutlet private weak var detailProductCostLabel: UILabel!
+    @IBOutlet private weak var detailHeaderView: DetailHeaderView!
 
-    private var presenter: DetailViewPresenter!
+    var presenter: DetailViewPresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.loadProductInfo()
+        setupViews()
+        presenter?.loadProductInfo()
+        addBehaviors(behaviors: [HideNavigationBarBehavior()])
+    }
+
+    // MARK: - Private methods
+    private func setupViews() {
+        setupTableView()
+    }
+
+    private func setupTableView() {
+        detailProductTableView.alpha = 1
+        detailProductTableView.contentInsetAdjustmentBehavior = .never
+        detailProductTableView.tableHeaderView = detailHeaderView
+        detailProductTableView.register(DetailCell.self)
+    }
+
+    // MARK: - IBAction for back button
+    @IBAction private func backToProductList(_ sender: Any) {
+        presenter.backPreviousScreen()
     }
 }
 
 extension DetailViewController: DetailProductView {
+    // MARK: - Transfer data for header
     func showProduct(product: Product?) {
-        detailProductNameLabel.text = product?.title
-        detailProductDescriptionLabel.text = product?.description
-        detailProductCostLabel.text = String(describing: product?.cost)
-        detailProductImageView.image = UIImage(named: product?.imageName ?? "")
+        detailHeaderView.configurate(with: product!)
     }
 }

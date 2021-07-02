@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Networkservice protocols
 protocol NetworkServiceProtocol {
     func getProducts(completion: @escaping (Result<[Product]?, Error>) -> Void)
 }

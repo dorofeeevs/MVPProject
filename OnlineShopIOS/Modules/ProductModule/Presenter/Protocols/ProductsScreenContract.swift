@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Product screen protocols
 protocol ProductList: AnyObject, ActivityIndicatorPresentable {
     func reloadProductListItems()
     func showError(error: Error)

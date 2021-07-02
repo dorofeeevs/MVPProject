@@ -7,11 +7,15 @@
 
 import Foundation
 
+// MARK: - Detail screen protocols
 protocol DetailProductView: AnyObject, ActivityIndicatorPresentable {
+    // MARK: - Public method
     func showProduct(product: Product?)
 }
 
 protocol DetailViewPresenter: AnyObject {
-    init(view: DetailProductView, networkService: NetworkServiceProtocol, product: Product?)
+    init(view: DetailProductView, networkService: NetworkServiceProtocol, router: Routable, product: Product?)
+    // MARK: - Public methods 
     func loadProductInfo()
+    func backPreviousScreen()
 }

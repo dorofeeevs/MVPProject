@@ -8,18 +8,21 @@
 import Foundation
 
 class ProductListPresenter: ProductViewPresenter {
-    private var router: Routable?
     private(set) var products: [Product]?
+
+    // MARK: - Private properties
+    private var router: Routable?
     private weak var view: ProductList?
     private let networkService: NetworkServiceProtocol?
 
+    // MARK: - Initialization
     required init(view: ProductList, networkService: NetworkServiceProtocol, router: Routable ) {
         self.view = view
         self.networkService = networkService
         self.router = router
         loadProducts()
     }
-
+    // MARK: - Methods product list screen
     func tapOnItemProduct(product: Product?) {
         router?.showDetail(product: product)
     }

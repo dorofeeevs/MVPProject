@@ -8,9 +8,11 @@
 import Foundation
 
 class NetworkService: NetworkServiceProtocol {
+    // MARK: - Properties
     let baseUrlString = "http://localhost:5000/api"
     let productPathUrlString = "/products"
 
+    // MARK: - Network request
     func getProducts(completion: @escaping (Result<[Product]?, Error>) -> Void) {
         guard let url = URL(string: baseUrlString + productPathUrlString) else { return }
         URLSession.shared.dataTask(with: url) { data, _, error in

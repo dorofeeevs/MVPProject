@@ -8,7 +8,7 @@
 import Foundation
 
 struct Product: Codable {
-    let id: Int
+    let identifier: Int
     let title: String
     let description: String
     let cost: Double
@@ -16,8 +16,9 @@ struct Product: Codable {
     let imageName: String
     let categoryId: Int
 
+    // MARK: - Coding keys
     private enum CodingKeys: String, CodingKey {
-        case id = "id"
+        case identifier = "id"
         case title = "name"
         case description = "description"
         case cost = "price"
@@ -26,9 +27,10 @@ struct Product: Codable {
         case categoryId
     }
 
+    // MARK: - Initialization
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(Int.self, forKey: .id)
+        identifier = try container.decode(Int.self, forKey: .identifier)
         title = try container.decode(String.self, forKey: .title)
         description = try container.decode(String.self, forKey: .description)
         cost = try container.decode(Double.self, forKey: .cost)
@@ -37,7 +39,15 @@ struct Product: Codable {
         categoryId = try container.decode(Int.self, forKey: .categoryId)
     }
 
-    func getFormattedCost(_ cost: Double) -> String {
-        return "\(cost) ₽"
+    // MARK: - Public method
+    func getFormattedCost(_ price: Double) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.groupingSeparator = " "
+        numberFormatter.groupingSize = 3
+        numberFormatter.usesGroupingSeparator = true
+        numberFormatter.decimalSeparator = " "
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.maximumFractionDigits = 6
+        return numberFormatter.string(from: price as NSNumber)! + " " + "₽"
     }
 }
