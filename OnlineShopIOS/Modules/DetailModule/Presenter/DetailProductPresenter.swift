@@ -29,6 +29,8 @@ class DetailProductPresenter: DetailViewPresenter {
     }
 
     func backPreviousScreen() {
+        view?.showActivityIndicator(style: .medium, isUserInteractionEnabled: true)
         router?.comeBack()
+        view?.hideActivityIndicator()
     }
 }

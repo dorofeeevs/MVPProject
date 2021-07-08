@@ -9,12 +9,15 @@ import UIKit
 
 class ProductViewController: UIViewController {
     var presenter: ProductViewPresenter?
+    var loadingView: ProductCollectionFooterReusableView?
 
     // MARK: - Lazy property
-    private lazy var productCollectionView: UICollectionView = {
+    lazy var productCollectionView: UICollectionView = {
+        let loadingReusableNib = UINib(nibName: "ProductCollectionReusableView", bundle: nil)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         collectionView.backgroundColor = .white
         collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
+        collectionView.register(loadingReusableNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "loadingReusableViewId")
         collectionView.contentInsetAdjustmentBehavior = .always
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -35,6 +38,7 @@ extension ProductViewController {
         overrideUserInterfaceStyle = .light
         self.view.backgroundColor = .white
         self.view.addSubview(productCollectionView)
+        createActivity(style: .medium)
         setupConstraits()
     }
 
@@ -73,6 +77,6 @@ extension ProductViewController: ProductList {
     @objc func refreshData(_ refreshControl: UIRefreshControl) {
         productCollectionView.startRefreshing()
         productCollectionView.reloadData()
-        productCollectionView.endRefreshing(deadline: .now() + .seconds(2))
+        productCollectionView.endRefreshing(deadline: .now() + .seconds(1))
     }
 }
