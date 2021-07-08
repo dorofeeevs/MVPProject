@@ -9,11 +9,14 @@ import UIKit
 
 class ProductViewController: UIViewController {
     var presenter: ProductViewPresenter?
+    
     private var searchController = UISearchController(searchResultsController: nil)
     private var searchBarIsEmpty: Bool {
         guard let text = searchController.searchBar.text else { return false }
         return text.isEmpty
     }
+    private var timer: Timer?
+    
     var isFiltering: Bool {
         return searchController.isActive && !searchBarIsEmpty
     }
@@ -84,7 +87,12 @@ extension ProductViewController: UISearchResultsUpdating {
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        presenter?.filterContentForSearch(searchController.searchBar.text!)
-        self.productCollectionView.reloadData()
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { [weak self] timer in
+            guard let self = self else { return }
+            self.presenter?.filterContentForSearch(self.searchController.searchBar.text ?? "")
+            self.productCollectionView.reloadData()
+            timer.invalidate()
+        })
     }
 }
