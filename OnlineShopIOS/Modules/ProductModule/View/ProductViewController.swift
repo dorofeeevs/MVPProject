@@ -8,8 +8,10 @@
 import UIKit
 
 class ProductViewController: UIViewController {
+    let countCellForStartingPagination = 2
     var presenter: ProductViewPresenter?
     var loadingView: ProductCollectionFooterReusableView?
+    
 
     // MARK: - Lazy property
     lazy var productCollectionView: UICollectionView = {
