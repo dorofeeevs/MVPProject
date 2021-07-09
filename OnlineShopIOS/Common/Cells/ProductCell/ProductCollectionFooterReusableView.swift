@@ -9,8 +9,4 @@ import UIKit
 
 class ProductCollectionFooterReusableView: UICollectionReusableView {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
 }

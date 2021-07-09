@@ -12,7 +12,6 @@ class ProductViewController: UIViewController {
     var presenter: ProductViewPresenter?
     var loadingView: ProductCollectionFooterReusableView?
     
-
     // MARK: - Lazy property
     lazy var productCollectionView: UICollectionView = {
         let loadingReusableNib = UINib(nibName: "ProductCollectionReusableView", bundle: nil)

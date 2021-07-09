@@ -9,7 +9,7 @@ import Foundation
 
 class ProductListPresenter: ProductViewPresenter {
     private(set)var products: [Product] = []
-    var page = 1
+    private(set)var page = 1
     var isInitialLoading = true
     var hasNextPage = true
     var fetchingMore = false
@@ -19,15 +19,14 @@ class ProductListPresenter: ProductViewPresenter {
     private weak var view: ProductList?
     private let networkService: NetworkServiceProtocol?
   
-    
     // MARK: - Initialization
     required init(view: ProductList, networkService: NetworkServiceProtocol, router: Routable ) {
         self.view = view
         self.networkService = networkService
         self.router = router
         loadProducts()
-        loadMoreProducts()
     }
+    
     // MARK: - Methods product list screen
     func tapOnItemProduct(product: Product?) {
         router?.showDetail(product: product)
