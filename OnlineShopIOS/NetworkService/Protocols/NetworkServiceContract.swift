@@ -9,5 +9,5 @@ import Foundation
 
 // MARK: - Networkservice protocols
 protocol NetworkServiceProtocol {
-    func getProducts(completion: @escaping (Result<[Product]?, Error>) -> Void)
+    func getProducts(page: Int,_ completion: @escaping (Result<[Product]?, Error>) -> Void)
 }

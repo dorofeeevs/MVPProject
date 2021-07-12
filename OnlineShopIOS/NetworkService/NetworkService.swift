@@ -8,13 +8,18 @@
 import Foundation
 
 class NetworkService: NetworkServiceProtocol {
+    
     // MARK: - Properties
     let baseUrlString = "http://localhost:5000/api"
     let productPathUrlString = "/products"
 
     // MARK: - Network request
-    func getProducts(completion: @escaping (Result<[Product]?, Error>) -> Void) {
-        guard let url = URL(string: baseUrlString + productPathUrlString) else { return }
+    func getProducts(page: Int,_ completion: @escaping (Result<[Product]?, Error>) -> Void) {
+        var urlComponents = URLComponents(string: baseUrlString + productPathUrlString)
+        urlComponents?.queryItems = [
+            URLQueryItem(name: "page", value: "\(page)")
+        ]
+        guard let url = urlComponents?.url else { return }
         URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 completion(.failure(error))

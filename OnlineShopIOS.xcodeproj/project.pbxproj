@@ -18,14 +18,16 @@
 		11999EEB2680AD1E00BF7496 /* BuilderContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11999EEA2680AD1E00BF7496 /* BuilderContract.swift */; };
 		11999EED2680ADFA00BF7496 /* NetworkServiceContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11999EEC2680ADFA00BF7496 /* NetworkServiceContract.swift */; };
 		11999EF92680CC2200BF7496 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11999EF72680CC2200BF7496 /* DetailViewController.swift */; };
-		11AD86AE268C626400B8B54F /* UIViewController_activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AD86AD268C626400B8B54F /* UIViewController_activity.swift */; };
 		11AB02E7268615F9001A73A4 /* ExtensionUITableView_Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AB02E6268615F9001A73A4 /* ExtensionUITableView_Register.swift */; };
 		11AD86A32689ECE700B8B54F /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AD86A12689ECE700B8B54F /* DetailCell.swift */; };
 		11AD86A42689ECE700B8B54F /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11AD86A22689ECE700B8B54F /* DetailCell.xib */; };
 		11AD86A82689F6D400B8B54F /* LifecycleBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AD86A72689F6D400B8B54F /* LifecycleBehaviorViewController.swift */; };
 		11AD86AA2689F79A00B8B54F /* Behaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AD86A92689F79A00B8B54F /* Behaviors.swift */; };
 		11AD86AC268B308D00B8B54F /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AD86AB268B308D00B8B54F /* DetailHeaderView.swift */; };
+		11AD86AE268C626400B8B54F /* UIViewController_activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AD86AD268C626400B8B54F /* UIViewController_activity.swift */; };
 		11E4F28926807F7600B5FC4E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E4F28826807F7600B5FC4E /* Router.swift */; };
+		11F6C1A82694ADB00096272D /* ProductCollectionFooterReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6C1A62694ADB00096272D /* ProductCollectionFooterReusableView.swift */; };
+		11F6C1A92694ADB00096272D /* ProductCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F6C1A72694ADB00096272D /* ProductCollectionReusableView.xib */; };
 		F8183F4E266A26DF0098CE60 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8183F4D266A26DF0098CE60 /* Product.swift */; };
 		F839AEA02666476300CC44C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839AE9F2666476300CC44C3 /* AppDelegate.swift */; };
 		F839AEA22666476300CC44C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839AEA12666476300CC44C3 /* SceneDelegate.swift */; };
@@ -54,14 +56,16 @@
 		11999EEA2680AD1E00BF7496 /* BuilderContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderContract.swift; sourceTree = "<group>"; };
 		11999EEC2680ADFA00BF7496 /* NetworkServiceContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceContract.swift; sourceTree = "<group>"; };
 		11999EF72680CC2200BF7496 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		11AD86AD268C626400B8B54F /* UIViewController_activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_activity.swift; sourceTree = "<group>"; };
 		11AB02E6268615F9001A73A4 /* ExtensionUITableView_Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUITableView_Register.swift; sourceTree = "<group>"; };
 		11AD86A12689ECE700B8B54F /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		11AD86A22689ECE700B8B54F /* DetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
 		11AD86A72689F6D400B8B54F /* LifecycleBehaviorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifecycleBehaviorViewController.swift; sourceTree = "<group>"; };
 		11AD86A92689F79A00B8B54F /* Behaviors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Behaviors.swift; sourceTree = "<group>"; };
 		11AD86AB268B308D00B8B54F /* DetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
+		11AD86AD268C626400B8B54F /* UIViewController_activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_activity.swift; sourceTree = "<group>"; };
 		11E4F28826807F7600B5FC4E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		11F6C1A62694ADB00096272D /* ProductCollectionFooterReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionFooterReusableView.swift; sourceTree = "<group>"; };
+		11F6C1A72694ADB00096272D /* ProductCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionReusableView.xib; sourceTree = "<group>"; };
 		F8183F4D266A26DF0098CE60 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F839AE9C2666476300CC44C3 /* OnlineShopIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineShopIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F839AE9F2666476300CC44C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -384,6 +388,8 @@
 			isa = PBXGroup;
 			children = (
 				F86A3D8E266F6B3400A519AF /* ProductCollectionViewCell.swift */,
+				11F6C1A62694ADB00096272D /* ProductCollectionFooterReusableView.swift */,
+				11F6C1A72694ADB00096272D /* ProductCollectionReusableView.xib */,
 			);
 			path = ProductCell;
 			sourceTree = "<group>";
@@ -447,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				116112842681DF92004AB021 /* Detail.storyboard in Resources */,
+				11F6C1A92694ADB00096272D /* ProductCollectionReusableView.xib in Resources */,
 				F839AEAC2666476400CC44C3 /* LaunchScreen.storyboard in Resources */,
 				11AD86A42689ECE700B8B54F /* DetailCell.xib in Resources */,
 				F839AEA92666476400CC44C3 /* Assets.xcassets in Resources */,
@@ -500,6 +507,7 @@
 				F8D9EFA9268F1E7100BBB376 /* UIScrollView_refresh.swift in Sources */,
 				11999EE92680AD0400BF7496 /* RoutingContract.swift in Sources */,
 				F880B5FB266DF5E5000EDA09 /* ProductListPresenter.swift in Sources */,
+				11F6C1A82694ADB00096272D /* ProductCollectionFooterReusableView.swift in Sources */,
 				F839AEA02666476300CC44C3 /* AppDelegate.swift in Sources */,
 				11999EF92680CC2200BF7496 /* DetailViewController.swift in Sources */,
 				F85B79FE26676C9D00368F65 /* HistoryViewController.swift in Sources */,

@@ -48,6 +48,7 @@ struct Product: Codable {
         numberFormatter.decimalSeparator = " "
         numberFormatter.numberStyle = .decimal
         numberFormatter.maximumFractionDigits = 6
+        numberFormatter.minimumFractionDigits = 3
         return numberFormatter.string(from: price as NSNumber)! + " " + "₽"
     }
 }
