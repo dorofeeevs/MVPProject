@@ -8,8 +8,6 @@
 import UIKit
 
 class ProductViewController: UIViewController {
-    var presenter: ProductViewPresenter?
-    
     private var searchController = UISearchController(searchResultsController: nil)
     private var searchBarIsEmpty: Bool {
         guard let text = searchController.searchBar.text else { return false }
@@ -17,6 +15,7 @@ class ProductViewController: UIViewController {
     }
     private var timer: Timer?
     
+    var presenter: ProductViewPresenter?
     var isFiltering: Bool {
         return searchController.isActive && !searchBarIsEmpty
     }
