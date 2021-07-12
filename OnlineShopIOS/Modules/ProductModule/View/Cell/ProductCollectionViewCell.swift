@@ -10,6 +10,7 @@ import UIKit
 class ProductCollectionViewCell: UICollectionViewCell {
     static let identifier = "ProductCollectionViewCell"
 
+    // MARK: - Lazy properties
     lazy var roundedBackgroundView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 10
@@ -88,9 +89,19 @@ class ProductCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         setupUI()
     }
+
+    // MARK: - Public method
+    func configurateCell(product: Product) {
+        productTitleLabel.text = product.title
+        productCostLabel.text = product.getFormattedCost(product.cost)
+        productRaitingLabel.text = "\(product.rating)"
+        productImageView.image = UIImage(named: product.imageName )
+        productDescriptionLabel.text = product.description
+    }
 }
 
 extension ProductCollectionViewCell {
+    // MARK: - Setup constraits 
     private func setupUI() {
         self.contentView.addSubview(roundedBackgroundView)
         roundedBackgroundView.addSubview(productTitleLabel)

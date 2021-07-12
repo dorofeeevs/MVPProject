@@ -7,7 +7,8 @@
 
 import Foundation
 
-protocol ProductList: AnyObject {
+// MARK: - Product screen protocols
+protocol ProductList: AnyObject, ActivityIndicatorPresentable {
     func reloadProductListItems()
     func showError(error: Error)
 }
@@ -19,4 +20,5 @@ protocol ProductViewPresenter: AnyObject {
     func loadProducts()
     func filterContentForSearch(_ searchText: String)
     func tapOnItemProduct(product: Product?)
+    func loadMoreProducts()
 }

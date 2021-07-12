@@ -7,6 +7,9 @@
 
 import UIKit
 
+// MARK: - Builder protocols
 protocol MvpModuleCreatable {
+    // MARK: - Public methods
     func createProductModule() -> UIViewController
+    func createDetailModule(product: Product?, router: Routable) -> UIViewController
 }

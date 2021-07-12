@@ -11,8 +11,13 @@ class NetworkService: NetworkServiceProtocol {
     private let baseUrlString = "http://localhost:5000/api"
     private let productPathUrlString = "/products"
 
-    func getProducts(completion: @escaping (Result<[Product]?, Error>) -> Void) {
-        guard let url = URL(string: baseUrlString + productPathUrlString) else { return }
+    // MARK: - Network request
+    func getProducts(page: Int,_ completion: @escaping (Result<[Product]?, Error>) -> Void) {
+        var urlComponents = URLComponents(string: baseUrlString + productPathUrlString)
+        urlComponents?.queryItems = [
+            URLQueryItem(name: "page", value: "\(page)")
+        ]
+        guard let url = urlComponents?.url else { return }
         URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 completion(.failure(error))
