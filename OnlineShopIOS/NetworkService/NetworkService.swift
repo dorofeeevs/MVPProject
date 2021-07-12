@@ -8,8 +8,8 @@
 import Foundation
 
 class NetworkService: NetworkServiceProtocol {
-    let baseUrlString = "http://localhost:5000/api"
-    let productPathUrlString = "/products"
+    private let baseUrlString = "http://localhost:5000/api"
+    private let productPathUrlString = "/products"
 
     func getProducts(completion: @escaping (Result<[Product]?, Error>) -> Void) {
         guard let url = URL(string: baseUrlString + productPathUrlString) else { return }

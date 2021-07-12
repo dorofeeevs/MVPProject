@@ -8,13 +8,6 @@
 import UIKit
 
 class ProductViewController: UIViewController {
-    private var searchController = UISearchController(searchResultsController: nil)
-    private var searchBarIsEmpty: Bool {
-        guard let text = searchController.searchBar.text else { return false }
-        return text.isEmpty
-    }
-    private var timer: Timer?
-    
     var presenter: ProductViewPresenter?
     var isFiltering: Bool {
         return searchController.isActive && !searchBarIsEmpty
@@ -29,6 +22,13 @@ class ProductViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
+    
+    private var searchController = UISearchController(searchResultsController: nil)
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    private var timer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
