@@ -9,11 +9,9 @@ import Foundation
 import UIKit
 
 class ProductListPresenter: ProductViewPresenter {
-    
     private(set) var filtredProducts: [Product]?
-    //private(set) var products: [Product]?
-    private(set)var products: [Product]? = []
-    private(set)var page = 1
+    private(set) var products: [Product]? = []
+    private(set) var page = 1
     var isInitialLoading = true
     var hasNextPage = true
     var fetchingMore = false
@@ -72,7 +70,7 @@ class ProductListPresenter: ProductViewPresenter {
             self.loadProducts()
         }
     }
-    
+
     func filterContentForSearch(_ searchText: String) {
         isSearching = true
         filtredProducts = products?.filter({ (products: Product) -> Bool in

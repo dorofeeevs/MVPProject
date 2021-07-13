@@ -30,6 +30,7 @@ class ProductViewController: UIViewController {
         return collectionView
     }()
     
+    // MARK: - Private property
     private var searchController = UISearchController(searchResultsController: nil)
     private var searchBarIsEmpty: Bool {
         guard let text = searchController.searchBar.text else { return false }

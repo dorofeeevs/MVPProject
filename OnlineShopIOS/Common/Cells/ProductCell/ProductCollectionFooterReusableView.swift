@@ -8,5 +8,6 @@
 import UIKit
 
 class ProductCollectionFooterReusableView: UICollectionReusableView {
+    // MARK: - IBOutlet
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 }

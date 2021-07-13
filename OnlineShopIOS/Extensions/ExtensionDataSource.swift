@@ -15,7 +15,6 @@ extension ProductViewController: UICollectionViewDataSource {
             return presenter?.filtredProducts?.count ?? 0
         }
         return presenter?.products?.count ?? 0
-
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -23,7 +22,6 @@ extension ProductViewController: UICollectionViewDataSource {
             guard let product = isFiltering ? presenter?.filtredProducts?[indexPath.row] : presenter?.products?[indexPath.row] else {return UICollectionViewCell.init()}
             productItem.configurateCell(product: product)
             return productItem
-
         }
         return UICollectionViewCell()
     }
