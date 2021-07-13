@@ -8,18 +8,25 @@
 import UIKit
 
 class ProductViewController: UIViewController {
+    let countCellForStartingPagination = 2
     var presenter: ProductViewPresenter?
     var isFiltering: Bool {
         return searchController.isActive && !searchBarIsEmpty
     }
+    var loadingView: ProductCollectionFooterReusableView?
+    
+    // MARK: - Lazy property
     lazy var productCollectionView: UICollectionView = {
+        let loadingReusableNib = UINib(nibName: "ProductCollectionReusableView", bundle: nil)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         collectionView.backgroundColor = .white
         collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
+        collectionView.register(loadingReusableNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "loadingReusableViewId")
         collectionView.contentInsetAdjustmentBehavior = .always
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.addRefreshControll(actionTarget: self, action: #selector(refreshData))
         return collectionView
     }()
     
@@ -38,10 +45,12 @@ class ProductViewController: UIViewController {
 }
 
 extension ProductViewController {
+    // MARK: - Private methods
     private func setupUI() {
         overrideUserInterfaceStyle = .light
         self.view.backgroundColor = .white
         self.view.addSubview(productCollectionView)
+        createActivity(style: .medium)
         setupConstraits()
     }
 
@@ -67,12 +76,21 @@ extension ProductViewController {
 }
 
 extension ProductViewController: ProductList {
+    // MARK: - Methods product list screen
     func reloadProductListItems() {
         productCollectionView.reloadData()
     }
 
     func showError(error: Error) {
         print(error.localizedDescription)
+    }
+
+    // MARK: - obgc Method
+    @objc func refreshData(_ refreshControl: UIRefreshControl) {
+        //addBehaviors(behaviors: [HideNavigationBarBehavior()])
+        productCollectionView.startRefreshing()
+        productCollectionView.reloadData()
+        productCollectionView.endRefreshing(deadline: .now() + .seconds(1))
     }
 }
 
@@ -82,6 +100,7 @@ extension ProductViewController: UISearchResultsUpdating {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search..."
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = false
     }
     

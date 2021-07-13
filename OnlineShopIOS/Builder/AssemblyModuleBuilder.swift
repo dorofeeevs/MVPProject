@@ -16,4 +16,12 @@ class AssemblyModuleBuilder: MvpModuleCreatable {
         view.presenter = presenter
         return view
     }
+
+    func createDetailModule(product: Product?, router: Routable) -> UIViewController {
+        guard let view = UIStoryboard(name: "Detail", bundle: nil).instantiateInitialViewController() as? DetailViewController else { return UIViewController() }
+        let networkService = NetworkService()
+        let presenter = DetailProductPresenter(view: view, networkService: networkService, router: router, product: product)
+        view.presenter = presenter
+        return view
+    }
 }
