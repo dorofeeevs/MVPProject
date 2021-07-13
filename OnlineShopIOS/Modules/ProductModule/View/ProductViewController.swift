@@ -10,6 +10,9 @@ import UIKit
 class ProductViewController: UIViewController {
     let countCellForStartingPagination = 2
     var presenter: ProductViewPresenter?
+    var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
     var loadingView: ProductCollectionFooterReusableView?
     
     // MARK: - Lazy property
@@ -26,10 +29,19 @@ class ProductViewController: UIViewController {
         collectionView.addRefreshControll(actionTarget: self, action: #selector(refreshData))
         return collectionView
     }()
+    
+    // MARK: - Private property
+    private var searchController = UISearchController(searchResultsController: nil)
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    private var timer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        createSearchController()
     }
 }
 
@@ -76,8 +88,30 @@ extension ProductViewController: ProductList {
 
     // MARK: - obgc Method
     @objc func refreshData(_ refreshControl: UIRefreshControl) {
+        //addBehaviors(behaviors: [HideNavigationBarBehavior()])
         productCollectionView.startRefreshing()
         productCollectionView.reloadData()
         productCollectionView.endRefreshing(deadline: .now() + .seconds(1))
+    }
+}
+
+extension ProductViewController: UISearchResultsUpdating {
+    func createSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search..."
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = false
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { [weak self] timer in
+            guard let self = self else { return }
+            self.presenter?.filterContentForSearch(self.searchController.searchBar.text ?? "")
+            self.productCollectionView.reloadData()
+            timer.invalidate()
+        })
     }
 }

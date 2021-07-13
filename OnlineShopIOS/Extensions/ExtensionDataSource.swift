@@ -11,12 +11,15 @@ import UIKit
 // MARK: - Methods Data source
 extension ProductViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter?.products.count ?? 0
+        if isFiltering {
+            return presenter?.filtredProducts?.count ?? 0
+        }
+        return presenter?.products?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let productItem = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.identifier, for: indexPath) as? ProductCollectionViewCell {
-            guard let product = presenter?.products[indexPath.row] else {return UICollectionViewCell.init()}
+            guard let product = isFiltering ? presenter?.filtredProducts?[indexPath.row] : presenter?.products?[indexPath.row] else {return UICollectionViewCell.init()}
             productItem.configurateCell(product: product)
             return productItem
         }
@@ -46,7 +49,7 @@ extension ProductViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == presenter!.products.count - countCellForStartingPagination {
+        if indexPath.row == presenter!.products!.count - countCellForStartingPagination {
             presenter?.loadMoreProducts()
         }
     }

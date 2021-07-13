@@ -8,11 +8,10 @@
 import Foundation
 
 class NetworkService: NetworkServiceProtocol {
-    
     // MARK: - Properties
-    let baseUrlString = "http://localhost:5000/api"
-    let productPathUrlString = "/products"
-
+    private let baseUrlString = "http://localhost:5000/api"
+    private let productPathUrlString = "/products"
+    
     // MARK: - Network request
     func getProducts(page: Int,_ completion: @escaping (Result<[Product]?, Error>) -> Void) {
         var urlComponents = URLComponents(string: baseUrlString + productPathUrlString)

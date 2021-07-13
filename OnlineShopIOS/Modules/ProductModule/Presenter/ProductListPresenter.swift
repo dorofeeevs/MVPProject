@@ -6,19 +6,22 @@
 //
 
 import Foundation
+import UIKit
 
 class ProductListPresenter: ProductViewPresenter {
-    private(set)var products: [Product] = []
-    private(set)var page = 1
+    private(set) var filtredProducts: [Product]?
+    private(set) var products: [Product]? = []
+    private(set) var page = 1
     var isInitialLoading = true
     var hasNextPage = true
     var fetchingMore = false
+    var isSearching = false
     
     // MARK: - Private properties
     private var router: Routable?
     private weak var view: ProductList?
     private let networkService: NetworkServiceProtocol?
-  
+    
     // MARK: - Initialization
     required init(view: ProductList, networkService: NetworkServiceProtocol, router: Routable ) {
         self.view = view
@@ -49,7 +52,7 @@ class ProductListPresenter: ProductViewPresenter {
                         self.view?.reloadProductListItems()
                         return
                     }
-                    self.products.append(contentsOf: products!)
+                    self.products?.append(contentsOf: products!)
                     self.view?.reloadProductListItems()
                 case .failure(let error):
                     self.view?.showError(error: error)
@@ -66,5 +69,12 @@ class ProductListPresenter: ProductViewPresenter {
         DispatchQueue.main.async {
             self.loadProducts()
         }
+    }
+
+    func filterContentForSearch(_ searchText: String) {
+        isSearching = true
+        filtredProducts = products?.filter({ (products: Product) -> Bool in
+            return products.title.lowercased().contains(searchText.lowercased())
+        })
     }
 }

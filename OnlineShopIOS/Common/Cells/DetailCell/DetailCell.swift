@@ -10,5 +10,4 @@ import UIKit
 class DetailCell: UITableViewCell, ReusableView, NibLoadableView {
     // MARK: - IBOutlets
     @IBOutlet private weak var sizeChart: UILabel!
-
 }
