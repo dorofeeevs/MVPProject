@@ -1,4 +1,10 @@
 <h1 align="center">OnlineShop-Pet_Project</a> 
 <h1 align="left">Description</a> 
 <h3 align="left">App store branded sneakers.</h3>
+<h1 align="left">How to start</a>
+<h3 align="left">In order to run the application, must first raise the server, which is in demo mode and was not written by me, but I have access to it, and I can raise it. After starting localHost, the application is ready to use.</h3>
+<h1 align="left">Functional</a>
+<h3 align="left">The application has two screens, with the main product grid and a details screen for a specific product.The application also implements a request to the server, pagination.
+Cart screen and history are not yet implemented. Coredata is under development</h3>
+
 
