@@ -11,6 +11,8 @@ Cart screen and history are not yet implemented. Coredata is under development.<
 
 <a align="left"><img width="250" alt="Снимок экрана 2022-08-17 в 12 00 11" src="https://user-images.githubusercontent.com/58693867/185367227-804f6289-d8af-40cc-99d6-ffe79f1a8e6f.png" />
 <a align="left"><img width="250" alt="Снимок экрана 2022-08-17 в 12 00 28" src="https://user-images.githubusercontent.com/58693867/185367838-52d87965-7ecb-444f-acd9-fd6a1746323c.png" />
+<a align="left"><img width="388" alt="Снимок экрана 2022-08-17 в 12 01 08" src="https://user-images.githubusercontent.com/58693867/185368119-6e98c671-ce27-45a2-9e18-562511a6be04.png" />
+
 
 
 
